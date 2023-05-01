@@ -1,0 +1,9 @@
+window:
+  opacity: 0.9
+  #decorations: transparent
+font:
+  size: 13
+selection:
+  save_to_clipboard: true
+import:
+  - ~/.config/alacritty/colors.yml

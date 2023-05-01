@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export PATH="${PATH}:$HOME/Library/Python/3.9/bin"
+wal -q -i $HOME/Pictures/Wallpapers/Cyberpunk
+(cat ~/.cache/wal/sequences &)
+$HOME/.config/scripts/alacritty-color-export $HOME/.config/alacritty/colors.yml
+$HOME/.config/scripts/pywal-discord -p "$HOME/Library/Application Support/BetterDiscord/themes"
+pywalfox update 

@@ -1,0 +1,45 @@
+# focus window
+lcmd - left : yabai -m window --focus west
+lcmd - down : yabai -m window --focus south
+lcmd - up : yabai -m window --focus north
+lcmd - right : yabai -m window --focus east
+
+# move managed window
+shift + lcmd - left : yabai -m window --warp west
+shift + lcmd - down : yabai -m window --warp south
+shift + lcmd - up : yabai -m window --warp north
+shift + lcmd - right : yabai -m window --warp east
+
+# move focus next/prev workspace
+lcmd - 0x12 : yabai -m space --focus 1
+lcmd - 0x13 : yabai -m space --focus 2
+lcmd - 0x14 : yabai -m space --focus 3
+lcmd - 0x15 : yabai -m space --focus 4
+lcmd - 0x17 : yabai -m space --focus 5
+lcmd - 0x16 : yabai -m space --focus 6
+lcmd - 0x1A : yabai -m space --focus 7
+lcmd - 0x1C : yabai -m space --focus 8
+lcmd - 0x19 : yabai -m space --focus 9
+
+# move focused window to next/prev workspace
+lcmd + shift - 0x12 : yabai -m window --space 1 && yabai -m window --focus recent
+lcmd + shift - 0x13 : yabai -m window --space 2 && yabai -m window --focus recent
+lcmd + shift - 0x14 : yabai -m window --space 3 && yabai -m window --focus recent
+lcmd + shift - 0x15 : yabai -m window --space 4 && yabai -m window --focus recent
+lcmd + shift - 0x17 : yabai -m window --space 5 && yabai -m window --focus recent
+lcmd + shift - 0x16 : yabai -m window --space 6 && yabai -m window --focus recent
+lcmd + shift - 0x1A : yabai -m window --space 7 && yabai -m window --focus recent
+lcmd + shift - 0x1C : yabai -m window --space 8 && yabai -m window --focus recent
+lcmd + shift - 0x19 : yabai -m window --space 9 && yabai -m window --focus recent
+
+# toggle fullscreen
+lcmd - z : yabai -m window --toggle zoom-fullscreen
+
+# close focused window
+lcmd - a : yabai -m window --close
+
+# open terminal
+lcmd - 0x24 : open -na /Applications/Alacritty.app 
+
+# change wallpaper (random)
+lcmd - w : $HOME/.config/scripts/pywal-config > /dev/null 2>&1

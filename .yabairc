@@ -1,0 +1,77 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# Global 
+
+yabai -m config layout                       bsp
+yabai -m config focus_follows_mouse          autofocus
+yabai -m config auto_balance                 off
+
+yabai -m config top_padding    10
+yabai -m config bottom_padding 10
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     10
+
+#yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      1.0
+yabai -m config window_shadow                on
+
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
+yabai -m config split_ratio                  0.50
+
+# Mouse support
+
+yabai -m config mouse_modifier               alt
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+
+# Opacity
+yabai -m rule --add app="^Code$" opacity=0.90
+yabai -m rule --add app="^YT Music$" opacity=0.90
+yabai -m rule --add app="^YouTube Music$" opacity=0.90
+yabai -m rule --add app="^Finder$" opacity=0.90
+yabai -m rule --add app="^Mail$" opacity=0.90
+yabai -m rule --add app="^Discord$" opacity=0.90
+
+# Exceptions
+
+yabai -m rule --add app="^System Preferences$" layer=above manage=off
+yabai -m rule --add app="^CopyQ$"  manage=off
+yabai -m rule --add app="^System Settings$" layer=above manage=off
+yabai -m rule --add app="^OpenVPN Connect$" layer=above manage=off
+yabai -m rule --add app="^Riot Client$" layer=above manage=off 
+yabai -m rule --add app="^League of Legends$" layer=above manage=off
+yabai -m rule --add title="^League of Legends (TM) Client$" layer=above manage=off
+yabai -m rule --add title='Settings$' layer=above manage=off
+yabai -m rule --add title='Preferences$' layer=above manage=off
+yabai -m rule --add app='^System Information$' layer=above manage=off
+yabai -m rule --add app='^Firefox$' title='^Library$' layer=above manage=off
+yabai -m rule --add app='^Google Drive$' title='^Sign in to Google Drive$' layer=above manage=off
+yabai -m rule --add app='^Photos$' title='^General$' layer=above manage=off
+yabai -m rule --add app='^Photos$' title='^iCloud$' layer=above manage=off
+yabai -m rule --add app='^Messenger$' title='^Messenger settings$' layer=above manage=off
+yabai -m rule --add app='^Mail$' layer=above manage=off
+yabai -m rule --add app='^Swiftcord$' title='^User$' layer=above manage=off
+yabai -m rule --add app='^Swiftcord$' title='^Billing$' layer=above manage=off
+yabai -m rule --add app='^Swiftcord$' title='^App$' layer=above manage=off
+yabai -m rule --add app='^Swiftcord$' title='^Activity$' layer=above manage=off
+yabai -m rule --add app='^Swiftcord$' title='^Others$' layer=above manage=off
+yabai -m rule --add app='^BetterDiscord$' title='^BetterDiscord Installer$' layer=above manage=off
+yabai -m rule --add title='^YouTube Music - Mini Player$' layer=above manage=off
+yabai -m signal --add event=window_title_changed app="^YouTube Music for Desktop$" \
+  action="yabai -m rule --add title='^YouTube Music - Mini Player$' layer=above manage=off"
+yabai -m rule --add app='^Discord$' title='^Discord Updater$' layer=above manage=off
+yabai -m rule --add app="^Problem Reporter$" layer=above manage=off
+yabai -m rule --add app="^Autostarter$" layer=above manage=off
+
+
+# Some Goland settings, in case you are using it. float Goland Preference panes
+yabai -m rule --add app='Goland IDEA' title='^$' manage=off
+yabai -m rule --add app='Goland IDEA' title='Project Structure' manage=off
+yabai -m rule --add app='Goland IDEA' title='Preferences' manage=off
+yabai -m rule --add app='Goland IDEA' title='Edit configuration' manage=off
