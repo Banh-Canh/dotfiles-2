@@ -34,6 +34,9 @@ source <(kubectl completion zsh)
 alias k=kubectl
 complete -F __start_kubectl k
 
+# helm
+source <(helm completion zsh)
+
 # fluxcd
 source <(flux completion zsh)
 complete -C $(which flux) flux-old
