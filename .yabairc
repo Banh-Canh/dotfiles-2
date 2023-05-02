@@ -39,7 +39,7 @@ yabai -m rule --add app="^Mail$" opacity=0.90
 yabai -m rule --add app="^Discord$" opacity=0.90
 
 # Exceptions
-
+yabai -m rule --add app="^Tailscale$" layer=above manage=off
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
 yabai -m rule --add app="^CopyQ$"  manage=off
 yabai -m rule --add app="^System Settings$" layer=above manage=off
